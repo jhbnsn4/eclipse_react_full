@@ -43,7 +43,8 @@ const sendLogin = () => {
         <input value={user.password} name='password' onChange={(e) => handleChange(e)}></input>
         <h5>Email</h5>
         <input value={user.email} name='email' onChange={(e) => handleChange(e)}></input>
-        <button type='submit'>submit</button>
+       <br></br>
+        <button className='btn-dark' type='submit'>submit</button>
         </form>
   </div>
   )

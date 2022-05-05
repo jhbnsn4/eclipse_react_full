@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import './Login.css'
 
 export default function Login() {
     const [user, setUser] = useState({
@@ -7,6 +8,7 @@ export default function Login() {
         email: ''
     })
     const [users, setUsers] = useState([{}])
+    const [passX, setPassX] = useState('')
     const [initial, seInitial] = useState(0);
     const [login, setLogin] = useState(false)
 
@@ -19,6 +21,7 @@ export default function Login() {
 const handleChange = (event) => {
     const { target: { name, value } } = event
     setUser({...user, [name]: value })
+  
 
 
 }
@@ -33,17 +36,16 @@ const handleSubmit = () => {
 }
 
 
+
+
   return (
-    <div>
-        <h1>Name: {user.username} Pass:  {user.password} Email: {user.email}</h1>
-        <form onSubmit={() => handleSubmit()}>
-        <h5>Username</h5>
-        <input value={user.username} name='username' onChange={(e) => handleChange(e)}></input>
-        <h5>Password</h5>
-        <input value={user.password} name='password' onChange={(e) => handleChange(e)}></input>
-        <button type='submit'>LOGIN</button>
+    <div className='login-div'>
+        <h1>Login</h1>
+        <form className='login-grid' autocomplete="off"  onSubmit={() => handleSubmit()}>
+        <input className='login-grid-item login-input'  placeholder='Enter Username' value={user.username} name='username' onChange={(e) => handleChange(e)}></input>
+        <input className='login-grid-item login-input'  placeholder='Enter Password' value={user.password} name='password' onChange={(e) => handleChange(e)}></input>
+        <button  className='btn-dark' type='submit'>LOGIN</button>
         </form>
-        <p>LOGIN {login}</p>
     </div>
   )
 }

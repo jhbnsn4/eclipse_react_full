@@ -1,18 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import Login from '../Login/Login';
-
+import './NavBar.css'
 
 export default function NavBar() {
   return (
     <div>
-        <nav>
-            <ul>
-                <li>
-                    <Link to='/login'>Login</Link>
+        <nav className='nav-cl'>
+            <ul className='ul-cl'>
+                <li className='li-cl'>
+                    <Link className='Link-cl' to='/login'>Login</Link>
                 </li>
-                <li>
-                    <Link to='/register'>Register</Link>
+                <li className='li-cl'>
+                    <Link className='Link-cl'  to='/register'>Register</Link>
                 </li>
                 
             </ul>
