@@ -1,12 +1,9 @@
 import React, {useState} from 'react'
-import NavBar from '../NavBar/NavBar'
+import Login from '../Login/Login'
 
 export default function UpdateUser() {
-    const [user, setUser] = useState({
-        username: '',
-        password: '',
-        email: ''
-    })
+  var userStored = JSON.parse(localStorage.getItem("CurrentUser"))
+    const [user, setUser] = useState(userStored)
     
     const handleChange = (event) => {
         const { target: { name, value } } = event
@@ -17,6 +14,10 @@ export default function UpdateUser() {
     
     const handleSubmit = () => {
         sendLogin()
+    }
+
+    const logUser = () => {
+      console.log(userStored)
     }
     
     const sendLogin = () => {
@@ -34,11 +35,12 @@ export default function UpdateUser() {
       
       
       }
+      if(userStored){
        return (
         <div>
            
-            <h1>Name: {user.username} Pass:  {user.password} Email: {user.email}</h1>
-            <form onSubmit={() => handleSubmit()}>
+            <h1 onClick={() => logUser() }>Update: {userStored.username}</h1>
+            <form onSubmit={() => handleSubmit()} autoComplete="off">
             <h5>Username</h5>
             <input value={user.username} name='username' onChange={(e) => handleChange(e)}></input>
             <h5>Password</h5>
@@ -50,4 +52,9 @@ export default function UpdateUser() {
             </form>
       </div>
       )
+       }
+       else {
+         return(
+         <Login />
+               )      }
     }

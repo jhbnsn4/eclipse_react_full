@@ -25,4 +25,27 @@ app.get("/get-users", async (request, response) => {
   }
 });
 
+app.put('/update/:id', (req, res, next) => {
+  const user = new User({
+    id: req.params.id,
+    username: req.body.username,
+    password: req.body.password,
+    email: req.body.email
+  });
+  console.log("USER TO UPDATE", user)
+  User.updateOne({id: req.params.id}, user).then(
+    () => {
+      res.status(201).json({
+        message: 'Thing updated successfully!'
+      });
+    }
+  ).catch(
+    (error) => {
+      res.status(400).json({
+        error: error
+      });
+    }
+  );
+});
+
 module.exports = app;

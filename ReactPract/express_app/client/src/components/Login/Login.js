@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { receiveCurrentUser } from '../../actions/LoginActions'
-import NavBar from '../NavBar/NavBar'
 import { useNavigate, useParams } from "react-router-dom";
 
 import './Login.css'
@@ -43,7 +42,7 @@ const handleSubmit = (e) => {
         if(users[i].username === user.username && users[i].password === user.password){
             dispatch(receiveCurrentUser(users[i]))
             localStorage.setItem('CurrentUser', JSON.stringify(users[i]));
-            navigate('/update');
+            navigate('/create');
         }
     }
 }
@@ -56,7 +55,7 @@ const handleSubmit = (e) => {
       
     <div className='login-div'>
         <div className='login-heading'><h1 className='login-h1'>Login</h1></div>
-        <form className='login-grid'  onSubmit={(e) => handleSubmit(e)}>
+        <form className='login-grid'  onSubmit={(e) => handleSubmit(e)} autoComplete="off">
         <input onClick={() => addFade()} className='login-grid-item login-input'  placeholder='Enter Username' value={user.username} name='username' onChange={(e) => handleChange(e)}></input>
         <input className='login-grid-item login-input'  placeholder='Enter Password' value={user.password} name='password' onChange={(e) => handleChange(e)}></input>
         <button  className='btn-login' type='submit'>LOGIN</button>

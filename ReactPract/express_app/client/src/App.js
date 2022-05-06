@@ -5,7 +5,7 @@ import NavBar from './components/NavBar/NavBar';
 import Login from './components/Login/Login';
 import './App.css';
 import UpdateUser from './components/UpdateUser/UpdateUser';
-
+import CreatePost from './components/CreatePost/CreatePost'
 
 function App() {
 
@@ -19,6 +19,8 @@ function App() {
       <Route path='/register' element={<Register />} />
       <Route path='/login' element={<Login />} />
       <Route path='/update' element={<UpdateUser />} />
+      <Route path='/create' element={<CreatePost />} />
+
 
     </Routes>
     </BrowserRouter>

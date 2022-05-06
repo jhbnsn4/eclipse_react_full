@@ -33,7 +33,7 @@ afterEach(() => {
 it("renders h1",  () => {
  render(<Login />);
   // eslint-disable-next-line testing-library/no-node-access
-  expect(document.querySelector('h1').textContent).toBe("Name:  Pass:  Email: ");
+  expect(document.querySelector('h1').textContent).toBe("Login");
 });
 
 
@@ -41,8 +41,4 @@ it("renders username in h1", () => {
   const {input} = setup('Enter Username')
   fireEvent.change(input, {target: {value: 'JDBENSONWIU'}})
   expect(input.value).toBe('JDBENSONWIU')
-    // eslint-disable-next-line testing-library/no-node-access
-  expect(document.querySelector('h1').textContent).toBe("Name: JDBENSONWIU Pass:  Email: ");
-
-
 })
