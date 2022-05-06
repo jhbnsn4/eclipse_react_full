@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import NavBar from '../NavBar/NavBar'
 
 export default function Register() {
 const [user, setUser] = useState({
@@ -35,6 +36,7 @@ const sendLogin = () => {
   }
    return (
     <div>
+    
         <h1>Name: {user.username} Pass:  {user.password} Email: {user.email}</h1>
         <form onSubmit={() => handleSubmit()}>
         <h5>Username</h5>

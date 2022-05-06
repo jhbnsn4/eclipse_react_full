@@ -1,19 +1,14 @@
+import React, {useEffect, useState} from 'react'
 import {Routes, Route,BrowserRouter} from 'react-router-dom';
-import Register from './Register/Register';
-import NavBar from './NavBar/NavBar';
-import Login from './Login/Login';
+import Register from './components/Register/Register';
+import NavBar from './components/NavBar/NavBar';
+import Login from './components/Login/Login';
 import './App.css';
+import UpdateUser from './components/UpdateUser/UpdateUser';
 
 
 function App() {
 
-
-const sendGet = () => {
-  fetch('http://localhost:5000/users/get-users').then(res => res.json())
-  .then(res => console.log(res));
-
-
-}
 
 
   return (
@@ -23,6 +18,8 @@ const sendGet = () => {
       <Route path='/' element={<Register />} />
       <Route path='/register' element={<Register />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/update' element={<UpdateUser />} />
+
     </Routes>
     </BrowserRouter>
   );
