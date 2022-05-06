@@ -1,5 +1,6 @@
 const express = require("express");
 var userModel = require('./models');
+var User = require ('./models')
 const app = express();
 
 
@@ -26,26 +27,48 @@ app.get("/get-users", async (request, response) => {
 });
 
 app.put('/update/:id', (req, res, next) => {
-  const user = new User({
-    id: req.params.id,
+//   const userId = req.params;
+//   const user =  {  
+//     username: req.body.username,
+//     password: req.body.password,
+//     email: req.body.email} 
+//   userModel.findByIdAndUpdate(userId , user, 
+//       function (err, docs) { 
+//       if (err){ 
+//           console.log(err) 
+//       } 
+//       else{ 
+//           console.log("Updated User : ", docs); 
+//       } 
+//   }); 
+
+// });
+
+
+  var user = {
     username: req.body.username,
     password: req.body.password,
     email: req.body.email
-  });
-  console.log("USER TO UPDATE", user)
-  User.updateOne({id: req.params.id}, user).then(
+  };
+
+
+  userModel.updateOne({id: req.params}, user).then(
     () => {
       res.status(201).json({
         message: 'Thing updated successfully!'
       });
+      console.log("UPDATER USER SUCCESS")
+
     }
   ).catch(
     (error) => {
+      console.log("UPDATE USER ERROR")
+      console.log(error)
       res.status(400).json({
         error: error
       });
     }
   );
-});
+ });
 
 module.exports = app;

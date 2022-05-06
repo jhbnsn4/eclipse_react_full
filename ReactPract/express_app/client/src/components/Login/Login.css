@@ -1,5 +1,6 @@
+
 .login-grid {
-    margin-left: 20px;
+margin-left: 20px;
 display: grid;
 gap: 40px;
 grid-template-columns: repeat(2,1fr);
@@ -33,16 +34,20 @@ grid-template-columns: repeat(2,1fr);
 
 }
 
-.login-heading {
-text-align: center;
-}
+.login-head {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width:100%
+  }
 .login-h1 {
-    transform: translate(-3%);
-    letter-spacing: 4px;
+    width: 12vw;
+    margin-right: 2vw;
+    letter-spacing: 5px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
-    animation: fadeInPurp 2s;
+    font-weight: 200;
     color: rgb(145, 145, 245);
+
 }
 
 

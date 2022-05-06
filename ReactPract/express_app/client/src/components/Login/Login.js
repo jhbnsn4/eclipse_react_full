@@ -54,7 +54,8 @@ const handleSubmit = (e) => {
   return (
       
     <div className='login-div'>
-        <div className='login-heading'><h1 className='login-h1'>Login</h1></div>
+        <br></br>
+        <div className='login-head'><h1 className='login-h1'>Login</h1></div>
         <form className='login-grid'  onSubmit={(e) => handleSubmit(e)} autoComplete="off">
         <input onClick={() => addFade()} className='login-grid-item login-input'  placeholder='Enter Username' value={user.username} name='username' onChange={(e) => handleChange(e)}></input>
         <input className='login-grid-item login-input'  placeholder='Enter Password' value={user.password} name='password' onChange={(e) => handleChange(e)}></input>
