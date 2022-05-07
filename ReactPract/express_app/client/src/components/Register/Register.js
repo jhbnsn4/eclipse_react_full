@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
-import NavBar from '../NavBar/NavBar'
-
+import './Register.css'
 export default function Register() {
 const [user, setUser] = useState({
     username: '',
@@ -35,18 +34,21 @@ const sendLogin = () => {
   
   }
    return (
-    <div>
+    <div className='register-grid'>
     
-        <h1>Name: {user.username} Pass:  {user.password} Email: {user.email}</h1>
-        <form onSubmit={() => handleSubmit()}>
-        <h5>Username</h5>
-        <input value={user.username} name='username' onChange={(e) => handleChange(e)}></input>
-        <h5>Password</h5>
-        <input value={user.password} name='password' onChange={(e) => handleChange(e)}></input>
-        <h5>Email</h5>
-        <input value={user.email} name='email' onChange={(e) => handleChange(e)}></input>
+        <form className='register-grid' onSubmit={() => handleSubmit()}>
+        <h1 className='register-h1'>Register</h1>
+        <div className='grid-div'>
+        <input className='register-input' value={user.username} name='username' onChange={(e) => handleChange(e)} placeholder={'Username'}></input>
+        </div>
+        <div className='grid-div'>
+        <input className='register-input' value={user.password} name='password' onChange={(e) => handleChange(e)}  placeholder={'Password'}></input>
+       </div>
+       <div className='grid-div'>
+        <input className='register-input' value={user.email} name='email' onChange={(e) => handleChange(e)}  placeholder={'Email'}></input>
+       </div>
        <br></br>
-        <button className='btn-dark' type='submit'>submit</button>
+        <button className='btn-register' type='submit'>SUBMIT</button>
         </form>
   </div>
   )

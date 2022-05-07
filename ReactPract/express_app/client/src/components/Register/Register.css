@@ -1,0 +1,90 @@
+
+.register-grid {
+    margin-left: 1vw;
+    display: grid;
+    gap: 10px;
+
+    grid-template-columns: repeat(3,1fr);
+    
+    }
+
+.register-h1 {
+    grid-column: span 3;
+    align-self: center;
+    width: 12vw;
+    margin-right: 2vw;
+    letter-spacing: 5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 200;
+    color: rgb(145, 145, 245);
+}
+
+.btn-register {
+    grid-column: span 3;
+
+    background-color: rgb(167, 167, 233);
+    border-width: 0px;
+    width: 15vw;
+    height: 4vh;
+    letter-spacing: 11px;
+    border-radius: 100px;
+    min-width: 100px;
+    min-height: 33px;
+}
+
+.btn-register:hover {
+    background-color: rgb(220, 220, 250);
+    border-width: 0px;
+    font-weight: 150;
+    letter-spacing: 12px;
+    border-radius: 100px;
+
+
+}
+.register-input {
+    display: block;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-color:rgb(206, 209, 205);
+    font-size: 25px;
+    text-transform: uppercase;
+    width: 30vw;
+}
+.register-input:focus {
+    outline: none;
+    animation: register-input-focus 1s;
+  
+  }
+
+.register-input::placeholder {
+    font-size: 12px;
+    color:rgb(206, 209, 205);
+    text-transform: capitalize;
+    letter-spacing: 5px;
+
+}
+
+.grid-div{
+    width: 31vw;
+}
+
+@keyframes register-input-focus
+ {
+  from {
+    
+    width: 0px;
+    border-color: rgb(67, 167, 248);
+    opacity: 0;
+
+
+    
+  }
+  80% {
+ 
+    border-color: rgb(67, 167, 248);
+    width: 30vw;
+    opacity: 59
+  }
+
+}
